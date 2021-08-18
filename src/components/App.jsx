@@ -3,11 +3,11 @@ import Button from './button';
 
 
 
-const App = () => {
+const App = (props) => {
     return (
         <div>
-            <div class="container">
-            <p id="name">Pumpkin</p>
+            <div className="container">
+            
             <Button />
         </div>
         </div>
