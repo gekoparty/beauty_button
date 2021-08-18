@@ -10,22 +10,33 @@ const fontsArr = [
   "American Typewriter, serif",
 ];
 
+const fontWeight = [
+  "bold",
+  "normal"
+];
+
 const Button = (props) => {
   const [changeColor, setColor] = useState("lightblue");
+  const [newFont, setFont] = useState("Arial");
+  const [newRadius, setRadius] = useState('50px');
+  const [newFontWeigth, setFontWeigth] = useState('normal');
 
   const onClickHandler = (e) => {
     setColor(randomcolor());
-    console.log(changeColor);
+    setFont(fontsArr[Math.floor(Math.random()*fontsArr.length)]);
+    setRadius(Math.floor(Math.random()* 50) + "px");
+    setFontWeigth(fontWeight[Math.floor(Math.random()*fontWeight.length)])
+    
   };
-  props.changeColor;
+  
 
   return (
     <div>
-      <p style={{ color: changeColor }} id="name">
+      <p style={{ color: changeColor, fontFamily: newFont, fontWeight: newFontWeigth }} id="name">
         Pumpkin
       </p>
       <button
-        style={{ background: changeColor }}
+        style={{ background: changeColor, borderRadius: newRadius }}
         onClick={onClickHandler}
         id="beautifierBtn"
       >
